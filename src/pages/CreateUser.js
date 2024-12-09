@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.min.js"
 import axios from 'axios';
 import { Button, Form } from 'react-bootstrap';
-import React, { useState, useEffect , Component} from 'react';
+import React, { Component} from 'react';
 
 
 const cookies = new Cookies();

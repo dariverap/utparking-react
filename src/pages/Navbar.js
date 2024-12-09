@@ -7,7 +7,7 @@ const Navbar = ({ cerrarSesion }) => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">
+                <a className="navbar-brand" href="/">
                     <img
                         src="https://upload.wikimedia.org/wikipedia/commons/5/50/Utplogonuevo.svg"
                         alt="UTP Logo"

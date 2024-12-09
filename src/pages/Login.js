@@ -3,7 +3,7 @@ import '../css/Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.min.js"
 import axios from 'axios';
-import md5 from 'md5';
+
 import Cookies from 'universal-cookie';
 
 const cookies = new Cookies();

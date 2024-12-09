@@ -3,9 +3,7 @@ import Cookies from 'universal-cookie';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import axios from 'axios';
-import { Button } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faParking, faUsers, faList, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+
 
 const cookies = new Cookies();
 
