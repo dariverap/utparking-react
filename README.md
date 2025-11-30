@@ -1,68 +1,85 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# SIMA Parking Web Dashboard
 
-## Available Scripts
+![React](https://img.shields.io/badge/React-16.13-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=flat-square&logo=bootstrap&logoColor=white)
+![Axios](https://img.shields.io/badge/HTTP-Axios-5A29E4?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Active-success?style=flat-square)
 
-In the project directory, you can run:
+> **Administrative interface for the Parking System.** Built with React, this SPA allows administrators to manage users, view real-time parking space availability, and handle entry/exit records manually.
 
-### `npm start`
+---
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 👤 Author
+**Created by Diego Rivera**
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[View Code on GitHub](https://github.com/dariverap/utparking-react) | [🇪🇸 Versión en Español](./README.es.md)
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🏗 Architecture
 
-### `npm run build`
+### Project Tree
+```bash
+src/
+├── css/              # Custom Styles (Login.css)
+├── pages/            # View Components
+│   ├── Login.js      # Auth Entry Point
+│   ├── Menu.js       # Dashboard Landing
+│   ├── Navbar.js     # Shared Navigation
+│   ├── Gestion*.js   # Management Logic (Spaces, Records)
+│   └── CRUD*.js      # User Management (Create, Read, Update)
+├── routes/
+│   └── Routes.js     # Router Configuration
+└── index.js          # App Mount Point
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Application Flow
+The application uses Class Components and manages state locally, utilizing `universal-cookie` for session persistence.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```mermaid
+graph TD
+    A[Login Page] -->|Auth Success| B[Menu/Dashboard]
+    B --> C[Navbar]
+    C --> D[Spaces Management]
+    C --> E[Parking Records]
+    C --> F[Users Management]
+    D --> D1[Update Availability]
+    E --> E1[Cancel/Confirm Reservation]
+    F --> F1[Create/Edit/Deactivate User]
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🛠 Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+*   **Framework:** React (Create React App)
+*   **Routing:** `react-router-dom` (v5)
+*   **HTTP Client:** `axios`
+*   **UI Framework:** `react-bootstrap`, `bootstrap`
+*   **Session Management:** `universal-cookie`
+*   **Utils:** `date-fns`, `md5`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🚀 Installation
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1.  **Navigate to the frontend directory:**
+    ```bash
+    cd frontend
+    ```
 
-## Learn More
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3.  **Run the application:**
+    ```bash
+    npm start
+    ```
+    *The app will open at http://localhost:3000*
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+4.  **Build for Production:**
+    ```bash
+    npm run build
+    ```
